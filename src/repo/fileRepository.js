@@ -60,7 +60,7 @@ class FileRepository {
         if (userFiles !== undefined) {
             var file = userFiles.get(fileName);
             if (file !== undefined) {
-                this.files[userName][fileName] = fileContent;
+                userFiles.set(fileName, fileContent);
                 returnObject = this.getFilebyUser(userName, fileName)
             }
         }
