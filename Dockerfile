@@ -4,6 +4,6 @@ COPY package.json ./
 RUN npm install npm -g && \
     npm install
 COPY src/ src/
-EXPOSE 8080
+EXPOSE 80
 ENTRYPOINT ["npm"]
 CMD ["start"]
