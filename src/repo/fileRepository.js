@@ -10,9 +10,11 @@ class FileRepository {
         // JSON objects have name and content fields.
         var returnArray = [];
         var userFiles = this.files.get(userName);
-        userFiles.forEach((value, key, map) => {
-            returnArray.push({'name': key, 'content': value});
-        })
+        if (userFiles) {
+            userFiles.forEach((value, key, map) => {
+                returnArray.push({'name': key, 'content': value});
+            })
+        }
         return returnArray;
     }
 
