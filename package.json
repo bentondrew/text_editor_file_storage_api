@@ -1,0 +1,13 @@
+{
+  "name": "text_editor_file_api_service",
+  "version": "0.1.0",
+  "description": "REST API service for file storage within the text editor app.",
+  "author": "Benton Drew <bentondrew24@gmail.com>",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "node ./src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
