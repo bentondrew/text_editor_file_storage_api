@@ -12,7 +12,7 @@ class FileRepository {
         var userFiles = this.files.get(userName);
         if (userFiles) {
             userFiles.forEach((value, key, map) => {
-                returnArray.push({'name': key, 'content': value});
+                returnArray.push({"name": key, "content": value});
             })
         }
         return returnArray;
@@ -20,8 +20,16 @@ class FileRepository {
 
     getFilebyUser(userName, fileName) {
         // Returns an object with name and content fields.
-        return {'name': fileName,
-                'content': this.files.get(userName).get(fileName)};
+        returnObject = {}
+        var userFiles = this.files.get(userName);
+        if (userFiles) {
+            var fileContent = userFiles.get(fileName);
+            if (fileContent) {
+                returnObject["name"] = fileName;
+                returnObject["content"] = fileContent;
+            }
+        }
+        return returnObject
     }
 
     addFilebyUser(userName, fileName, fileContent) {
