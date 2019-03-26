@@ -11,24 +11,24 @@ const getFileRoutes = (app) => {
         })
         .get("/:userName", (req, res) => {
             const result = fileRepo.getAllbyUser(req.params.userName);
-            res.send(result);
+            res.json(result);
         })
         .get("/:userName/:fileName", (req, res) => {
             const result = fileRepo.getFilebyUser(req.params.userName,
                 req.params.fileName);
-            res.send(result);
+            res.json(result);
         })
         .post("/:userName/:fileName", (req, res) => {
             const fileContent = req.body;
             const result = fileRepo.addFilebyUser(req.params.userName,
-                req.params.fileName, req.params.fileContent);
-            res.send(result);
+                req.params.fileName, fileContent["content"]);
+            res.json(result);
         })
         .put("/:userName/:fileName", (req, res) => {
             const fileContent = req.body;
             const result = fileRepo.updateFilebyUser(req.params.userName,
-                req.params.fileName, req.params.fileContent);
-            res.send(result);
+                req.params.fileName, fileContent["content"]);
+            res.json(result);
         });
     app.use("/files", router);
 };
