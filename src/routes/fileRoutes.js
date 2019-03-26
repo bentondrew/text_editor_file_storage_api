@@ -6,7 +6,7 @@ const fileRepo = require("../repo/fileRepository");
 const getFileRoutes = (app) => {
     const router = new Router();
     router
-        .get("/test", (req, res) => {
+        .post("/test", (req, res) => {
             res.json(req.body);
         })
         .get("/:userName", (req, res) => {
