@@ -20,7 +20,7 @@ class FileRepository {
 
     getFilebyUser(userName, fileName) {
         // Returns an object with name and content fields.
-        returnObject = {}
+        var returnObject = {}
         var userFiles = this.files.get(userName);
         if (userFiles) {
             var fileContent = userFiles.get(fileName);
