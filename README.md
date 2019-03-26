@@ -1,2 +1,2 @@
-# text_editor_file_storage
-Back-end service for storing file for the text editor.
+# text_editor_file_storage_api
+API service for storing files for the text editor.
