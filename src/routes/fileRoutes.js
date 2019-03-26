@@ -6,6 +6,9 @@ const fileRepo = require("../repo/fileRepository");
 const getFileRoutes = (app) => {
     const router = new Router();
     router
+        .get("/test", (req, res) => {
+            res.json(req.body);
+        })
         .get("/:userName", (req, res) => {
             const result = fileRepo.getAllbyUser(req.params.userName);
             res.send(result);
